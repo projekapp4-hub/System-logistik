@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Logistik Asrama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Sistem Logistik Asrama</h1>
+            <p>Pengambilan dan Pembaruan Stok Barang</p>
+        </header>
+
+        <div id="search-section" class="card">
+            <h2>Cari Data Siswa</h2>
+            <div class="search-box">
+                <input type="text" id="input-nis" placeholder="Masukkan NIS Siswa..." autocomplete="off">
+                <button id="btn-search" onclick="handleSearchSiswa()">Cari</button>
+            </div>
+            <div id="search-error" class="error-banner hidden"></div>
+        </div>
+
+        <div id="form-section" class="hidden">
+            
+            <div class="card profile-card">
+                <h2>Profil Siswa</h2>
+                <div class="profile-grid">
+                    <div class="profile-item"><strong>NIS:</strong> <span id="siswa-nis">-</span></div>
+                    <div class="profile-item"><strong>Nama:</strong> <span id="siswa-nama">-</span></div>
+                    <div class="profile-item"><strong>Kelas:</strong> <span id="siswa-kelas">-</span></div>
+                    <div class="profile-item"><strong>Asrama:</strong> <span id="siswa-asrama">-</span></div>
+                    <div class="profile-item"><strong>Status:</strong> <span id="siswa-status" class="badge">-</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Input Pengambilan Barang</h2>
+                
+                <div class="form-group">
+                    <label for="select-petugas">Nama Petugas Pembuat Komitmen</label>
+                    <select id="select-petugas">
+                        <option value="">-- Pilih Petugas --</option>
+                    </select>
+                </div>
+
+                <div class="barang-header">
+                    <h3>Daftar Barang yang Diambil</h3>
+                    <button type="button" class="btn-secondary" onclick="addBarangRow()">+ Tambah Baris Barang</button>
+                </div>
+
+                <div id="barang-list-container">
+                    </div>
+
+                <div class="action-buttons">
+                    <div id="submit-status" class="error-banner hidden" style="width:100%; margin-bottom:12px; background-color:#dcfce7; color:#15803d;"></div>
+                    <button id="btn-submit" class="btn-primary" onclick="handleSubmitTransaksi()">Simpan Transaksi</button>
+                    <button type="button" class="btn-danger" onclick="resetToSearchState()">Batal / Kembali</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
